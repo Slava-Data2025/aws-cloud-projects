@@ -18,6 +18,8 @@ Demonstrate how static content can be hosted, delivered globally, and managed co
 - Importance of correct Content-Type metadata
 - How S3 serves static content without compute
 
+![S3 Static Website Hosting](../screenshots/01-s3-static-website-hosting.png)
+
 ---
 
 ## Exercise 2: Global Content Delivery with CloudFront
@@ -33,6 +35,9 @@ Demonstrate how static content can be hosted, delivered globally, and managed co
 - Why CloudFront is preferred over direct S3 access in production
 - How HTTPS is handled at the edge
 
+![CloudFront Distribution](../screenshots/03-cloudfront-distribution.png)
+![Website via CloudFront](../screenshots/04-website-via-cloudfront.png)
+
 ---
 
 ## Exercise 3: Cost Management with S3 Lifecycle Policies
@@ -46,6 +51,8 @@ Demonstrate how static content can be hosted, delivered globally, and managed co
 - Lifecycle rules must be scoped carefully
 - How AWS automates long-term cost control
 - Why lifecycle policies are essential at scale
+
+![S3 Lifecycle Rule](../screenshots/05-s3-lifecycle-rule.png)
 
 ---
 
