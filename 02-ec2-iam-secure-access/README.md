@@ -26,7 +26,7 @@ Demonstrate how compute resources in AWS are accessed and secured using **IAM ro
 **Goal:** Provide AWS service access without using access keys.
 
 **What I did:**
-- Created an IAM role intended for EC2
+- Created an IAM role (`build2-ec2-s3-read-role`) for EC2
 - Attached the AWS-managed `AmazonS3ReadOnlyAccess` policy
 - Scoped permissions to read-only access for S3
 
