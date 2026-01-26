@@ -82,4 +82,42 @@ Demonstrate how compute resources in AWS are accessed and secured using **IAM ro
 **What I learned:**
 - IAM roles provide temporary credentials automatically
 - The AWS CLI transparently uses the instance role
-- This is the correct pattern for production w
+- This is the correct pattern for production workloads
+
+![S3 Read Access](./screenshots/05-s3-read-access-via-iam-role.png)
+
+---
+
+## Exercise 6: Enforce Least Privilege
+**Goal:** Confirm that permissions are limited as intended.
+
+**What I did:**
+- Attempted to create a new S3 bucket from the EC2 instance
+- Received an AccessDenied error
+
+**What I learned:**
+- Least privilege must be verified, not assumed
+- Read-only permissions behaved exactly as designed
+- Proper IAM design prevents accidental or malicious actions
+
+![Least Privilege Enforcement](./screenshots/06-iam-role-least-privilege-proof.png)
+
+---
+
+## Architecture Summary
+- Amazon EC2 for compute
+- IAM Role attached to EC2 for identity
+- AWS-managed policy for scoped permissions
+- SSH for secure instance access
+- AWS CLI for permission verification
+
+---
+
+## Evidence
+Screenshots included showing:
+- EC2 instance running
+- IAM role creation and permissions
+- IAM role attached to EC2
+- Successful SSH access
+- S3 read access via role
+- Access denied when exceeding permissions
