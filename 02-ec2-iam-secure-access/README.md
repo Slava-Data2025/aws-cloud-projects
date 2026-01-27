@@ -104,12 +104,50 @@ Demonstrate how compute resources in AWS are accessed and secured using **IAM ro
 
 ---
 
+## Exercise 7: Restrict Access to a Single S3 Bucket (Bucket-Specific Policy)
+**Goal:** Ensure the EC2 instance can access **only one specific S3 bucket** while all other buckets are denied.
+
+**What I did:**
+- Created a second S3 bucket (`build2-slava2026-deny-test`) to act as a negative test case  
+- Removed the broad AWS-managed `AmazonS3ReadOnlyAccess` policy from the EC2 IAM role  
+- Created and attached a **custom, bucket-specific IAM policy** granting read-only access to `mystaticwebsite-slava2026`  
+- Verified permissions from inside the EC2 instance using the AWS CLI  
+
+**IAM Policy (Bucket-Specific Read-Only Access):**
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowListSpecificBucket",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::mystaticwebsite-slava2026"
+    },
+    {
+      "Sid": "AllowReadObjectsInSpecificBucket",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::mystaticwebsite-slava2026/*"
+    }
+  ]
+}
+
+**What I learned:**
+- Managed policies are often too permissive for real-world workloads
+- Least privilege is best enforced by narrowing allowed resources, not by adding explicit deny rules
+- Bucket-specific IAM policies provide precise control over S3 access and reduce the risk of unintended data exposure
+
+![Bucket-Specific Allow vs Deny](./screenshots/08-s3-bucket-allow-vs-deny.png)
+
+---
+
 ## Architecture Summary
-- Amazon EC2 for compute
-- IAM Role attached to EC2 for identity
-- AWS-managed policy for scoped permissions
+- Amazon EC2 for compute (Amazon Linux 2023)
+- IAM role attached to EC2 for identity-based access
+- Custom, bucket-specific IAM policy enforcing least-privilege S3 access
 - SSH for secure instance access
-- AWS CLI for permission verification
+- AWS CLI used from inside EC2 for runtime permission verification
 
 ---
 
@@ -121,3 +159,4 @@ Screenshots included showing:
 - Successful SSH access
 - S3 read access via role
 - Access denied when exceeding permissions
+- Bucket-specific access enforced
