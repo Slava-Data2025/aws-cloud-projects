@@ -132,6 +132,7 @@ Demonstrate how compute resources in AWS are accessed and secured using **IAM ro
     }
   ]
 }
+```
 
 **What I learned:**
 - Managed policies are often too permissive for real-world workloads
