@@ -139,7 +139,7 @@ Demonstrate how compute resources in AWS are accessed and secured using **IAM ro
 - Least privilege is best enforced by narrowing allowed resources, not by adding explicit deny rules
 - Bucket-specific IAM policies provide precise control over S3 access and reduce the risk of unintended data exposure
 
-![Bucket-Specific Allow vs Deny](./screenshots/08-s3-bucket-allow-vs-deny.png)
+![Bucket-Specific Allow vs Deny](./screenshots/07-s3-bucket-allow-vs-deny.png)
 
 ---
 
