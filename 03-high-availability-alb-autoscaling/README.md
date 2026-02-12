@@ -84,8 +84,8 @@ Demonstrate how to build a highly available, secure, and self-healing web archit
 - How health checks determine instance availability
 - Why load balancers are critical for high availability
 
-![ALB Details](screenshots/10-target-group-healthy.png)
-![ALB Broswer Response](screenshots/11-alb-browser-response.png)
+![Target Group Healthy](screenshots/10-target-group-healthy.png)
+![ALB Browser Response](screenshots/11-alb-browser-response.png)
 
 ---
 
