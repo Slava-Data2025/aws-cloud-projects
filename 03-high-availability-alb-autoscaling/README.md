@@ -84,9 +84,8 @@ Demonstrate how to build a highly available, secure, and self-healing web archit
 - How health checks determine instance availability
 - Why load balancers are critical for high availability
 
-![ALB Details](screenshots/10-alb-details.png)
-![Target Group Healthy](screenshots/11-target-group-healthy.png)
-![ALB DNS Working](screenshots/12-alb-dns-working.png)
+![ALB Details](screenshots/10-target-group-healthy.png)
+![ALB Broswer Response](screenshots/11-alb-browser-response.png)
 
 ---
 
@@ -107,11 +106,11 @@ Demonstrate how to build a highly available, secure, and self-healing web archit
 - How ELB health checks integrate with Auto Scaling
 - What self-healing infrastructure looks like in practice
 
-![Launch Template](screenshots/13-launch-template.png)
-![Auto Scaling Config](screenshots/14-autoscaling-group-config.png)
-![Multiple Instances Running](screenshots/15-multiple-instances-running.png)
-![ASG Instance Replacement](screenshots/16-asg-instance-replacement.png)
-![Target Group Healthy After Replace](screenshots/17-target-group-healthy-after-replace.png)
+![Launch Template](screenshots/12-launch-template.png)
+![Auto Scaling Config](screenshots/13-autoscaling-group-config.png)
+![Multiple Instances Running](screenshots/14-multiple-instances-running.png)
+![ASG Instance Replacement](screenshots/15-asg-instance-replacement.png)
+![Target Group Healthy After Replace](screenshots/16-target-group-healthy-after-replace.png)
 
 ---
 
